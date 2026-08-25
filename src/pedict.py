@@ -11,7 +11,7 @@ from PIL import Image
 def get_modal():
     net = Hnet(3)
 
-    net.load_state_dict(torch.load('model/net.pth'))
+    net.load_state_dict(torch.load('model/net.pth',map_location=torch.device('cpu')))
     net.eval()
     return net
 
